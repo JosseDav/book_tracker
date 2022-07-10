@@ -3,11 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.g;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  *
  * @author josse
  */
-public class NewClass {
-    public static void main(String args[]){
-    }
+public class Main_Book {
+    public static void main(String[] args) {
+            SpringApplication.run(Main_Book.class, args);
+	}
     }
