@@ -28,7 +28,12 @@ public class book_controller {
     @GetMapping("/")
     public String root(ModelMap model){
         List<Book> allUsers = bookrepo.findAll();
-        Book user = new Book();
+        allUsers.forEach(book -> {
+            System.err.print(book);
+        });
+        Book user = bookrepo.findById(0);
+        user.setTitle("Something");
+        bookrepo.saveAndFlush(user);
         model.put("allUsers", allUsers);
         model.put("user", user);
         return "something";

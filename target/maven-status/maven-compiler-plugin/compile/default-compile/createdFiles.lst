@@ -1,4 +1,4 @@
 com\example\book\entity\Book.class
-com\example\book\BookApplication.class
 com\example\book\web\book_controller.class
+com\example\book\BookApplication.class
 com\example\book\repo\bookRepository.class
