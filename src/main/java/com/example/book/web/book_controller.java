@@ -33,6 +33,9 @@ public class book_controller {
         });
         Book user = bookrepo.findById(0);
         user.setTitle("Something");
+        user.setGenre("idk");
+        user.setAuthor("someone");
+        user.setRating(1);
         bookrepo.saveAndFlush(user);
         model.put("allUsers", allUsers);
         model.put("user", user);
