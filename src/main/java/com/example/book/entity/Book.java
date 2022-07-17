@@ -59,4 +59,8 @@ public class Book implements Serializable {
             this.rating = rating;
         }
     }
+    
+    public String toString(){
+        return title;
+    }
 }

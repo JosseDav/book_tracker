@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
@@ -27,19 +28,18 @@ public class book_controller {
     
     @GetMapping("/")
     public String root(ModelMap model){
-        List<Book> allUsers = bookrepo.findAll();
-        allUsers.forEach(book -> {
-            System.err.print(book);
-        });
-        Book user = bookrepo.findById(0);
-        user.setTitle("Something");
-        user.setGenre("idk");
-        user.setAuthor("someone");
-        user.setRating(1);
-        bookrepo.saveAndFlush(user);
-        model.put("allUsers", allUsers);
-        model.put("user", user);
+        Book book = bookrepo.findById(0);
+        model.put("book", book);
         return "something";
+    }
+    @GetMapping("/allbooks")
+    public String get_all_books(ModelMap model){
+        List<Book> allBooks = bookrepo.findAll();
+        allBooks.forEach(book -> {
+            System.out.println(book);
+        });
+        model.put("allBooks", allBooks);
+        return "show_all";
     }
     @GetMapping("/error")
     public void error(){

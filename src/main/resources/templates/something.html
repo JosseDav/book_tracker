@@ -19,7 +19,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <p>Hello Nerd</p>
+            <p th:text = "|The current book is ${book.title}|"></p>
             <!--<table>-- comment 
                 <tr the:each="user : ${allusers}">
                 </tr>
