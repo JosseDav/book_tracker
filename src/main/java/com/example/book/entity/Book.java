@@ -22,6 +22,13 @@ public class Book implements Serializable {
     private String genre;
     private int rating;
     
+    public Book(){
+        
+    }
+    public Book(String title, String author){
+        this.title = title;
+        this.author = author;
+    }
     @Id
     public int getId(){
         return id;
